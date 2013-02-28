@@ -1,0 +1,44 @@
+doctype 5
+html
+  head
+    meta(charset='utf-8')
+    title mtap_
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    style
+        body{padding-top: 40px;}
+    block head
+  body
+    div.navbar.navbar-inverse.navbar-fixed-top
+        div.navbar-inner
+            div.container
+                a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand(href='#',title='more than another proxy') MTAP
+                div.nav-collapse.collapse
+                    ul.nav
+                        block nav.files
+                          li
+                              a(href='/') files
+                        block nav.tasks
+                          li
+                              a(href='/tasks') tasks
+                        block nav.aria2
+                          li
+                              a(href='/aria2/') aria2
+                        block nav.info
+                          li
+                              a(href='/info') info
+                        block nav.faq
+                          li
+                              a(href='/faq') faq
+                        block nav.tty
+                          li
+                              a(href='/tty/') tty
+                        block nav.admin
+                          li
+                              a(href='/admin') admin
+
+    block content
+    block foot

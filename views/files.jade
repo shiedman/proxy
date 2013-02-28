@@ -1,0 +1,42 @@
+extends layout
+block head 
+  style
+    td [class^="icon-"]{
+      display: inline-block;
+      width: 1.25em;
+      text-align: center;
+    }
+block nav.files
+  li.active
+    a(href='/') files
+
+block content
+    div.container
+        h3 #{root}
+        table.table.table-striped.table-condensed
+            thead
+                tr
+                    th name
+                    th size
+                    th date
+                    th &nbsp;
+            tbody
+                tr
+                    td
+                        a(href=p)
+                            i.icon-arrow-up
+                            |&nbsp;..
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                each f,i in files
+                    tr
+                        td(style="max-width:480px;white-space:nowrap;overflow:hidden")
+                            i(class=f.style)
+                            a(href=f.href) #{f.filename}
+                        td=f.size
+                        td=f.date
+                        td(style="padding-right:0px;padding-left:0px;")
+                          if author
+                            a(href='/delete'+f.href)
+                                i.icon-remove
